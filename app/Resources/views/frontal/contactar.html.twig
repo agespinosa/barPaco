@@ -12,20 +12,20 @@
   <h1 class="mt-4 mb-3">Bar de Paco
     <small>Bares</small>
   </h1>
-
-  <!-- Content Row -->
+  <!-- Content Row Valencia-->
+  {% if sitio == 'vlc' or sitio == 'todos' %}
   <div class="row">
     <!-- Map Column -->
     <div class="col-lg-8 mb-4">
       <!-- Embedded Google Map -->
-      <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
+    <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d58650.817848542516!2d-0.4056576563052465!3d39.413859195778215!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd604f4cf0efb06f%3A0xb4a351011f7f1d39!2sValencia%2C+Espa%C3%B1a!5e0!3m2!1ses-419!2sar!4v1553206232826" ></iframe>
     </div>
     <!-- Contact Details Column -->
     <div class="col-lg-4 mb-4">
       <h3>Contact Details</h3>
       <p>
-        3481 Melrose Place
-        <br>Beverly Hills, CA 90210
+        San Martin 1212
+        <br>Valencia, CA 90210
         <br>
       </p>
       <p>
@@ -42,6 +42,74 @@
     </div>
   </div>
   <!-- /.row -->
+  {% endif %}
+
+  <!-- Content Row Barcelona-->
+  {% if sitio == 'brc' or sitio == 'todos' %}
+  <div class="row">
+    <!-- Map Column -->
+    <div class="col-lg-8 mb-4">
+      <!-- Embedded Google Map -->
+    <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d95777.3390637392!2d2.0787281787860556!3d41.39489759332279!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a49816718e30e5%3A0x44b0fb3d4f47660a!2sBarcelona%2C+Espa%C3%B1a!5e0!3m2!1ses-419!2sar!4v1553206423333"
+    ></iframe>
+  </div>
+    <!-- Contact Details Column -->
+    <div class="col-lg-4 mb-4">
+      <h3>Contact Details</h3>
+      <p>
+        San Jeronimo 2580
+        <br>Barcelona, CA 90210
+        <br>
+      </p>
+      <p>
+        <abbr title="Phone">P</abbr>: (123) 456-7890
+      </p>
+      <p>
+        <abbr title="Email">E</abbr>:
+        <a href="mailto:name@example.com">name@example.com
+        </a>
+      </p>
+      <p>
+        <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM
+      </p>
+    </div>
+  </div>
+  <!-- /.row -->
+  {% endif %}
+
+  <!-- Content Row Madrid-->
+  {% if sitio == 'mdr' or sitio == 'todos' %}
+  <div class="row">
+    <!-- Map Column -->
+    <div class="col-lg-8 mb-4">
+      <!-- Embedded Google Map -->
+    <iframe width="100%" height="400px" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115638.86419725665!2d-3.8005053363620727!3d40.391969470270865!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422997800a3c81%3A0xc436dec1618c2269!2zTWFkcmlkLCBFc3Bhw7Fh!5e0!3m2!1ses-419!2sar!4v1553206772098" ></iframe>
+  </div>
+    <!-- Contact Details Column -->
+    <div class="col-lg-4 mb-4">
+      <h3>Contact Details</h3>
+      <p>
+        Las Heras 4919
+        <br>Madrid, CA 90210
+        <br>
+      </p>
+      <p>
+        <abbr title="Phone">P</abbr>: (123) 456-7890
+      </p>
+      <p>
+        <abbr title="Email">E</abbr>:
+        <a href="mailto:name@example.com">name@example.com
+        </a>
+      </p>
+      <p>
+        <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM
+      </p>
+    </div>
+  </div>
+  <!-- /.row -->
+  {% endif %}
 
 </div
 {% endblock %}
