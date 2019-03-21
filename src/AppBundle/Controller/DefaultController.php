@@ -26,9 +26,9 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/contactar", name="contactar")
+     * @Route("/contactar/{sitio}", name="contactar")
      */
-    public function contactarAction(Request $request)
+    public function contactarAction(Request $request,$sitio='vlc')
     {
         // replace this example code with whatever you need
         return $this->render('frontal/contactar.html.twig');
