@@ -18,7 +18,7 @@ class DefaultController extends Controller
       $tapas= $repository->findAll();
       
     
-      return $this->render('frontal/index.html.twig');
+      return $this->render('frontal/index.html.twig', array('tapas'=>$tapas));
     }
     /**
      * @Route("/nosotros", name="nosotros")
