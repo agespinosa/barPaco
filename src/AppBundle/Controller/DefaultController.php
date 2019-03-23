@@ -37,4 +37,14 @@ class DefaultController extends Controller
         // replace this example code with whatever you need
         return $this->render('frontal/contactar.html.twig', array('sitio' => $sitio ));
     }
+
+    /**
+     * @Route("/tapa/{id}", name="tapa")
+     */
+    public function tapaAction(Request $request,$id=null)
+    {
+        $repository = $this->getDoctrine()->getRepository(Tapa::class);
+        $tapa= $repository->find($id);
+        return $this->render('frontal/tapa.html.twig', array('tapa' => $tapa ));
+    }
 }
