@@ -5,6 +5,7 @@ namespace AppBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use AppBundle\Entity\Tapa;
 
 class DefaultController extends Controller
 {
@@ -13,8 +14,11 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        // replace this example code with whatever you need
-        return $this->render('frontal/index.html.twig');
+      $repository = $this->getDoctrine()->getRepository(Tapa::class);
+      $tapas= $repository->findAll();
+      
+    
+      return $this->render('frontal/index.html.twig');
     }
     /**
      * @Route("/nosotros", name="nosotros")
