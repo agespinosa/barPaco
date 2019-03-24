@@ -6,6 +6,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use AppBundle\Entity\Tapa;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 /**
  * @Route("/gestionTapas")
@@ -17,11 +19,17 @@ class GestionTapasController extends Controller
      */
     public function nuevaTapaAction(Request $request)
     {
-      $repository = $this->getDoctrine()->getRepository(Tapa::class);
-      $tapas= $repository->findAll();
+      $tapa = new Tapa();
+      $form= $this->createFormBuilder($tapa)
+                        ->add('nombre', TextType::class)
+                        ->add('descripcion', TextType::class)
+                        ->add('ingredientes', TextareaType::class)
+                        ->getForm();;
       
     
-      return $this->render('frontal/index.html.twig', array('tapas'=>$tapas));
+      return $this->render('gestionTapas/nuevaTapa.html.twig', ['form' => $form->createView(),]);
     }
+
+    
     
 }
