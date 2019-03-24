@@ -18,6 +18,10 @@ class GestionTapasController extends Controller
      */
     public function nuevaTapaAction(Request $request)
     {
+      if(!is_null($request)){
+        $datos= $request->request->all();
+        var_dump($datos);
+      }
       $tapa = new Tapa();
       $form = $this->createForm(TapaType::class, $tapa);
       
