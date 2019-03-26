@@ -4,3 +4,9 @@
 32 - Formularios. Insertar nueva tapa
   https://symfony.com/doc/3.4/forms.html
   https://symfony.com/doc/3.4/doctrine.html
+
+33 - Formularios. CKEditor 
+   comandos instalacion
+      composer require egeloen/ckeditor-bundle
+      php bin/console ckeditor:install
+      php bin/console assets:install
