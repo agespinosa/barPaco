@@ -10,3 +10,7 @@
       composer require egeloen/ckeditor-bundle
       php bin/console ckeditor:install
       php bin/console assets:install
+
+34 - Formularios. Diseño del render manual
+  https://symfony.com/doc/3.4/form/form_customization.html
+  https://symfony.com/doc/3.4/form/rendering.html
