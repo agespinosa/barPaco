@@ -22,3 +22,6 @@
 36 - Formularios. FileType
     https://symfony.com/doc/3.4/reference/forms/types/form.html#attr
     https://symfony.com/doc/3.4/reference/forms/types/file.html
+
+37 - Formularios. FileType. Parte II
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file    
