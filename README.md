@@ -18,3 +18,7 @@
 35 - Formularios. Diseño con themes
   https://symfony.com/doc/3.4/form/form_customization.html
   vendor/symfony/symfony/src/Symfony/Bridge/Twig/Resources/views/Form/form_div_layout.html.twig
+
+36 - Formularios. FileType
+    https://symfony.com/doc/3.4/reference/forms/types/form.html#attr
+    https://symfony.com/doc/3.4/reference/forms/types/file.html
