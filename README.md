@@ -39,3 +39,5 @@
       php bin/console doctrine:schema:update --force
       php bin/console doctrine:generate:entities AppBundle
       php bin/console doctrine:schema:validate
+
+41 - Categorias. Insertar nueva
