@@ -58,3 +58,9 @@
 
 45 - Paginación de las tapas. QueryBuilder. Parte II
     https://twig.symfony.com/doc/2.x/tags/for.html    
+
+46 - Creando funciones en repositorio
+    https://symfony.com/doc/3.4/doctrine/repository.html
+
+47 - Entidad Usuario
+  https://symfony.com/doc/3.4/security/entity_provider.html    

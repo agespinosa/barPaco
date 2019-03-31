@@ -15,17 +15,9 @@ class DefaultController extends Controller
      * @Route("/{pagina}", name="homepage")
      */
     public function indexAction(Request $request, $pagina=1)
-    {
-      $elementosPorPagina= 3;  
+    { 
       $repository = $this->getDoctrine()->getRepository(Tapa::class);
-      //$tapas= $repository->findByTop(1);
-      $query = $repository->createQueryBuilder('t')
-        ->where('t.top = 1') 
-        ->setFirstResult($elementosPorPagina*($pagina-1))
-        ->setMaxResults($elementosPorPagina)
-        ->getQuery();
-
-     $tapas = $query->getResult();
+      $tapas = $repository->paginas($pagina);
     
       return $this->render('frontal/index.html.twig', array('tapas'=>$tapas, 'paginaActual'=>$pagina));
     }

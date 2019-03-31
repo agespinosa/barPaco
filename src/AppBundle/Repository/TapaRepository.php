@@ -10,4 +10,14 @@ namespace AppBundle\Repository;
  */
 class TapaRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function paginas($pagina, $elementosPorPagina=3){
+        //$tapas= $repository->findByTop(1);
+      $query = $this->createQueryBuilder('t')
+      ->where('t.top = 1') 
+      ->setFirstResult($elementosPorPagina*($pagina-1))
+      ->setMaxResults($elementosPorPagina)
+      ->getQuery();
+
+      return $query->getResult();
+    }
 }
