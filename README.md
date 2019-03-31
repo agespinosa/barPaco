@@ -55,3 +55,6 @@
 44 - Paginación de las tapas. QueryBuilder. Parte I
     https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/tutorials/pagination.html
     https://symfony.com/doc/3.4/doctrine.html#querying-for-objects-using-doctrine-s-query-builder
+
+45 - Paginación de las tapas. QueryBuilder. Parte II
+    https://twig.symfony.com/doc/2.x/tags/for.html    
