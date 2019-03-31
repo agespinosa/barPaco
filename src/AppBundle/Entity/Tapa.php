@@ -247,4 +247,9 @@ class Tapa
     {
         return $this->categoria;
     }
+
+    public function __toString()
+    {
+        return $this->nombre;
+    }
 }

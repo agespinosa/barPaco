@@ -47,7 +47,7 @@ class Categoria
      * @ORM\OneToMany(targetEntity="Tapa", mappedBy="categoria")
      */
     private $tapas;
-    
+
 
     public function __construct()
     {
@@ -169,5 +169,10 @@ class Categoria
     public function getTapas()
     {
         return $this->tapas;
+    }
+
+    public function __toString()
+    {
+        return $this->nombre;
     }
 }

@@ -43,11 +43,11 @@ class GestionTapasController extends Controller
           $entityManager->persist($tapa);
           $entityManager->flush();
 
-          return $this->redirectToRoute('categoria', ['id' => $tapa->getId()]);
+          return $this->redirectToRoute('tapa', ['id' => $tapa->getId()]);
       }
       
     
-      return $this->render('gestionTapas/nuevaCategoria.html.twig', ['form' => $form->createView(),]);
+      return $this->render('gestionTapas/nuevaTapa.html.twig', ['form' => $form->createView(),]);
     }
 
     /**

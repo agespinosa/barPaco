@@ -41,3 +41,8 @@
       php bin/console doctrine:schema:validate
 
 41 - Categorias. Insertar nueva
+
+42 - Tapa. Selector de categoria
+    https://symfony.com/doc/3.4/reference/forms/types/choice.html
+    https://symfony.com/doc/3.4/reference/forms/types/entity.html
+
