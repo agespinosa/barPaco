@@ -17,8 +17,14 @@ class DefaultController extends Controller
     public function indexAction(Request $request)
     {
       $repository = $this->getDoctrine()->getRepository(Tapa::class);
-      $tapas= $repository->findByTop(1);
-      
+      //$tapas= $repository->findByTop(1);
+      $query = $repository->createQueryBuilder('t')
+        ->where('t.top = 1') 
+        ->setFirstResult(0)
+        ->setMaxResults(3)
+        ->getQuery();
+
+     $tapas = $query->getResult();
     
       return $this->render('frontal/index.html.twig', array('tapas'=>$tapas));
     }

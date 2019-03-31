@@ -52,3 +52,6 @@
     php bin/console doctrine:schema:update --force
     php bin/console doctrine:generate:entities AppBundle
 
+44 - Paginación de las tapas. QueryBuilder. Parte I
+    https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/tutorials/pagination.html
+    https://symfony.com/doc/3.4/doctrine.html#querying-for-objects-using-doctrine-s-query-builder
