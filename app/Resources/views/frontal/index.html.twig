@@ -57,7 +57,11 @@
    {% for tapa in tapas %}
         <div class="col-lg-4 col-sm-6 portfolio-item">
         <div class="card h-100">
-          <a href="{{ path('tapa', {'id': tapa.id}) }}"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+        {% if tapa.foto|length > 0 %}
+        <a href="{{ path('tapa', {'id': tapa.id}) }}"><img class="card-img-top" src="{{ asset(tapaImg~tapa.foto) }}" width='700' height='200'  alt=""></a>
+        {% else %}
+        <a href="{{ path('tapa', {'id': tapa.id}) }}"><img class="card-img-top" src="http://placehold.it/700x400" alt=""></a>
+        {% endif %}
           <div class="card-body">
             <h4 class="card-title">
               <a href="{{ path('tapa', {'id': tapa.id}) }}">{{ tapa.nombre }}</a>

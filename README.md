@@ -28,3 +28,7 @@
 
 38 - Formularios. Uploaded File
     https://symfony.com/doc/3.4/controller/upload_file.html
+
+39 - Visualizar foto de tapa. Global parameters
+    https://symfony.com/doc/3.4/templating/global_variables.html
+    https://twig.symfony.com/doc/2.x/templates.html#math
