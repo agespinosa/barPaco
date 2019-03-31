@@ -32,3 +32,10 @@
 39 - Visualizar foto de tapa. Global parameters
     https://symfony.com/doc/3.4/templating/global_variables.html
     https://twig.symfony.com/doc/2.x/templates.html#math
+
+40 - Categorias. Relacion OneToMany
+    https://symfony.com/doc/3.4/doctrine/associations.html
+      php bin/console doctrine:generate:entity
+      php bin/console doctrine:schema:update --force
+      php bin/console doctrine:generate:entities AppBundle
+      php bin/console doctrine:schema:validate
