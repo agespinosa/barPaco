@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use AppBundle\Entity\Categoria;
+use AppBundle\Entity\Ingrediente;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class TapaType extends AbstractType
@@ -20,7 +21,14 @@ class TapaType extends AbstractType
         $builder
             ->add('nombre', TextType::class)
             ->add('descripcion',  CKEditorType::Class)
-            ->add('ingredientes', TextareaType::class)
+            ->add('ingredientes', EntityType::class, [
+                // looks for choices from this entity
+                'class' => 'AppBundle:Ingrediente',            
+            
+                // used to render a select box, check boxes or radios
+                'multiple' => true,
+                // 'expanded' => true,
+            ])
             ->add('categoria', EntityType::class, [
                 // looks for choices from this entity
                 'class' => 'AppBundle:Categoria',            

@@ -9,6 +9,8 @@ use AppBundle\Entity\Tapa;
 use AppBundle\Form\TapaType;
 use AppBundle\Form\CategoriaType;
 use AppBundle\Entity\Categoria;
+use AppBundle\Entity\Ingrediente;
+use AppBundle\Form\IngredienteType;
 
 /**
  * @Route("/gestionTapas")
@@ -93,6 +95,33 @@ class GestionTapasController extends Controller
     
       return $this->render('gestionTapas/nuevaCategoria.html.twig', ['form' => $form->createView(),]);
     }
+
+    /**
+     * @Route("/nuevoIngrediente", name="nuevoIngrediente")
+     */
+    public function nuevoIngredienteAction(Request $request)
+    {
+      $ingrediente = new Ingrediente();
+      // Contruye el formulario
+      $form = $this->createForm(IngredienteType::class, $ingrediente);
+      // Recoge la informacion
+      $form->handleRequest($request);
+      if ($form->isSubmitted() && $form->isValid()) {
+          // Rellena la entidad
+          $ingrediente = $form->getData();
+
+          // Persiste los datos
+          $entityManager = $this->getDoctrine()->getManager();
+          $entityManager->persist($ingrediente);
+          $entityManager->flush();
+
+          return $this->redirectToRoute('ingrediente', ['id' => $ingrediente->getId()]);
+      }
+      
+    
+      return $this->render('gestionTapas/nuevoIngrediente.html.twig', ['form' => $form->createView(),]);
+    }
+
 
     
     

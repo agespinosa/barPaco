@@ -36,9 +36,12 @@ class Tapa
     private $descripcion;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="ingredientes", type="text")
+     * Many Tapas have Many Ingredientes.
+     * @ORM\ManyToMany(targetEntity="Ingrediente")
+     * @ORM\JoinTable(name="tapas_ingredientes",
+     *      joinColumns={@ORM\JoinColumn(name="tapa_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="ingrediente_id", referencedColumnName="id")}
+     *      )
      */
     private $ingredientes;
 
@@ -68,6 +71,11 @@ class Tapa
      * @ORM\JoinColumn(name="categoria_id", referencedColumnName="id")
      */
     private $categoria;
+
+
+    public function __construct() {
+        $this->ingredientes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
 
     /**
@@ -128,29 +136,6 @@ class Tapa
         return $this->descripcion;
     }
 
-    /**
-     * Set ingredientes
-     *
-     * @param string $ingredientes
-     *
-     * @return Tapa
-     */
-    public function setIngredientes($ingredientes)
-    {
-        $this->ingredientes = $ingredientes;
-
-        return $this;
-    }
-
-    /**
-     * Get ingredientes
-     *
-     * @return string
-     */
-    public function getIngredientes()
-    {
-        return $this->ingredientes;
-    }
 
     /**
      * Set foto
@@ -251,5 +236,39 @@ class Tapa
     public function __toString()
     {
         return $this->nombre;
+    }
+
+    /**
+     * Add ingrediente
+     *
+     * @param \AppBundle\Entity\Ingrediente $ingrediente
+     *
+     * @return Tapa
+     */
+    public function addIngrediente(\AppBundle\Entity\Ingrediente $ingrediente)
+    {
+        $this->ingredientes[] = $ingrediente;
+
+        return $this;
+    }
+
+    /**
+     * Remove ingrediente
+     *
+     * @param \AppBundle\Entity\Ingrediente $ingrediente
+     */
+    public function removeIngrediente(\AppBundle\Entity\Ingrediente $ingrediente)
+    {
+        $this->ingredientes->removeElement($ingrediente);
+    }
+
+    /**
+     * Get ingredientes
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIngredientes()
+    {
+        return $this->ingredientes;
     }
 }

@@ -46,3 +46,9 @@
     https://symfony.com/doc/3.4/reference/forms/types/choice.html
     https://symfony.com/doc/3.4/reference/forms/types/entity.html
 
+43 - Ingredientes. ManyToMany Unidireccional
+    https://www.doctrine-project.org/projects/doctrine-orm/en/2.6/reference/association-mapping.html#many-to-many-unidirectional
+    php bin/console doctrine:generate:entity
+    php bin/console doctrine:schema:update --force
+    php bin/console doctrine:generate:entities AppBundle
+
