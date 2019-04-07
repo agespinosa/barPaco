@@ -24,6 +24,12 @@ class Usuario implements UserInterface, \Serializable
     private $username;
 
     /**
+     * @Assert\NotBlank
+     * @Assert\Length(max=4096)
+     */
+    private $plainPassword;
+
+    /**
      * @ORM\Column(type="string", length=64)
      */
     private $password;
@@ -49,6 +55,31 @@ class Usuario implements UserInterface, \Serializable
     {
         return $this->username;
     }
+    public function setUsername($username)
+    {
+        return $this->username=$username;
+    }
+
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    public function setPlainPassword($password)
+    {
+        $this->plainPassword = $password;
+    }
+
 
     public function getSalt()
     {

@@ -64,3 +64,6 @@
 
 47 - Entidad Usuario
   https://symfony.com/doc/3.4/security/entity_provider.html    
+
+48 - Formulario de registro. Parte 1
+  https://symfony.com/doc/3.4/doctrine/registration_form.html

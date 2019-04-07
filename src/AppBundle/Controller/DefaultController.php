@@ -8,6 +8,9 @@ use Symfony\Component\Routing\Annotation\Route;
 use AppBundle\Entity\Tapa;
 use AppBundle\Entity\Categoria;
 use AppBundle\Entity\Ingrediente;
+use AppBundle\Entity\Usuario;
+use AppBundle\Form\UsuarioType;
+use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
 class DefaultController extends Controller
 {
@@ -78,5 +81,32 @@ class DefaultController extends Controller
         }else{
             return $this->redirectToRoute('homepage');
         }
+    }
+
+    /**
+     * @Route("/registro", name="registro")
+     */
+    public function registroAction(Request $request, UserPasswordEncoderInterface $passwordEncoder)
+    {
+      $usuario = new Usuario();
+      // Contruye el formulario
+      $form = $this->createForm(UsuarioType::class, $usuario);
+      // Recoge la informacion
+      $form->handleRequest($request);
+      if ($form->isSubmitted() && $form->isValid()) {
+          // Rellena la entidad
+          $password = $passwordEncoder->encodePassword($usuario, $usuario->getPlainPassword());
+          $usuario->setPassword($password);
+          $usuario->setUsername($usuario->getEmail());
+          // Persiste los datos
+          $entityManager = $this->getDoctrine()->getManager();
+          $entityManager->persist($usuario);
+          $entityManager->flush();
+
+          return $this->redirectToRoute('usuario', ['id' => $usuario->getId()]);
+      }
+      
+    
+      return $this->render('gestionUsuario/registro.html.twig', ['form' => $form->createView(),]);
     }
 }
