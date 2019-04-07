@@ -25,7 +25,7 @@ class DefaultController extends Controller
       return $this->render('frontal/index.html.twig', array('tapas'=>$tapas, 'paginaActual'=>$pagina));
     }
     /**
-     * @Route("/nosotros", name="nosotros")
+     * @Route("/nosotros/", name="nosotros")
      */
     public function nosotrosAction(Request $request)
     {
@@ -84,7 +84,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/registro", name="registro")
+     * @Route("/registro/", name="registro")
      */
     public function registroAction(Request $request, UserPasswordEncoderInterface $passwordEncoder)
     {
@@ -103,10 +103,18 @@ class DefaultController extends Controller
           $entityManager->persist($usuario);
           $entityManager->flush();
 
-          return $this->redirectToRoute('usuario', ['id' => $usuario->getId()]);
+          return $this->redirectToRoute('login');
       }
       
     
-      return $this->render('gestionUsuario/registro.html.twig', ['form' => $form->createView(),]);
+      return $this->render('frontal/registro.html.twig', ['form' => $form->createView(),]);
+    }
+
+    /**
+     * @Route("/login/", name="login")
+     */
+    public function loginAction()
+    {
+        return $this->render('frontal/login.html.twig');
     }
 }

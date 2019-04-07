@@ -67,3 +67,7 @@
 
 48 - Formulario de registro. Parte 1
   https://symfony.com/doc/3.4/doctrine/registration_form.html
+
+49 - Formulario de registro. Parte 2
+  https://symfony.com/doc/3.4/security/form_login_setup.html
+  https://symfony.com/doc/3.4/reference/constraints/NotBlank.html
