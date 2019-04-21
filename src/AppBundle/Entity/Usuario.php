@@ -9,7 +9,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Table(name="usuario")
- * @ORM\Entity(repositoryClass="AppBundle\Repository\UserRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\UsuarioRepository")
  */
 class Usuario implements UserInterface, \Serializable
 {
@@ -130,6 +130,6 @@ class Usuario implements UserInterface, \Serializable
             $this->password,
             // see section on salt below
             // $this->salt
-        ) = unserialize($serialized, ['allowed_classes' => false]);
+        ) = unserialize($serialized);
     }
 }

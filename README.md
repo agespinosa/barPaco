@@ -71,3 +71,7 @@
 49 - Formulario de registro. Parte 2
   https://symfony.com/doc/3.4/security/form_login_setup.html
   https://symfony.com/doc/3.4/reference/constraints/NotBlank.html
+
+50 - Login  
+  https://symfony.com/doc/3.4/security/form_login_setup.html
+  https://symfony.com/doc/3.4/security/entity_provider.html
