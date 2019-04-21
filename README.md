@@ -75,3 +75,7 @@
 50 - Login  
   https://symfony.com/doc/3.4/security/form_login_setup.html
   https://symfony.com/doc/3.4/security/entity_provider.html
+
+51 - Logout
+  https://symfony.com/doc/3.4/templating/app_variable.html
+  https://symfony.com/doc/3.4/security.html

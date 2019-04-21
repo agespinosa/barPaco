@@ -17,13 +17,16 @@ security:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
-
+        
         main:
             anonymous: ~
             provider: our_db_provider
             form_login:
                 login_path: login
                 check_path: login
+            logout:
+                path:   /logout/
+                target: /            
 
             
 
