@@ -104,6 +104,7 @@ class DefaultController extends Controller
           $password = $passwordEncoder->encodePassword($usuario, $usuario->getPlainPassword());
           $usuario->setPassword($password);
           $usuario->setUsername($usuario->getEmail());
+          $usuario->setRoles(array('ROLE_USER'));
           // Persiste los datos
           $entityManager = $this->getDoctrine()->getManager();
           $entityManager->persist($usuario);

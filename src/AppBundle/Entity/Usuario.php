@@ -46,6 +46,11 @@ class Usuario implements UserInterface, \Serializable
      */
     private $isActive;
 
+    /**
+     * @ORM\Column(type="string", length=254, unique=true)
+     */
+    private $roles;
+
     public function __construct()
     {
         $this->isActive = true;
@@ -102,7 +107,13 @@ class Usuario implements UserInterface, \Serializable
 
     public function getRoles()
     {
-        return ['ROLE_USER'];
+        $roles= json_decode($this->roles);
+        return $roles;
+    }
+    public function setRoles($roles)
+    {
+        $roles_json= json_encode($roles);
+        $this->roles = $roles_json;
     }
 
     public function eraseCredentials()

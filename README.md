@@ -84,4 +84,6 @@
   https://symfony.com/doc/3.4/security.html
 
 53 - Roles
+  php bin/console doctrine:schema:update --force
+
   
