@@ -79,3 +79,9 @@
 51 - Logout
   https://symfony.com/doc/3.4/templating/app_variable.html
   https://symfony.com/doc/3.4/security.html
+
+52 - Acceso y restricciones
+  https://symfony.com/doc/3.4/security.html
+
+53 - Roles
+  

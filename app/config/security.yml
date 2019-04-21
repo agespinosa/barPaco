@@ -27,7 +27,8 @@ security:
             logout:
                 path:   /logout/
                 target: /            
-
+    access_control:
+        - { path: ^/gestionTapas, roles: ROLE_ADMIN }
             
 
     
