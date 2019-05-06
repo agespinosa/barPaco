@@ -86,4 +86,5 @@
 53 - Roles
   php bin/console doctrine:schema:update --force
 
-  
+54 - Reservas
+  php bin/console doctrine:generate:entities AppBundle

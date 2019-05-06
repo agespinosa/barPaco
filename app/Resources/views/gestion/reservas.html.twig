@@ -1,0 +1,39 @@
+{# Plantilla de nuestra aplicación #}
+{% extends 'base.html.twig' %}
+
+{% block titulo %}Lista reserva{% endblock %}
+{% block body %}
+<!-- Page Content -->
+<div class="container">
+  <!-- Page Heading/Breadcrumbs -->
+  <h1 class="mt-4 mb-3">Lista Reserva</h1>
+  <!-- Portfolio Item Row -->
+  <div class="row">
+    <div class="col-md-8">
+      <table class="table">
+        <thead>
+            <tr>
+            <th scope="col">#</th>
+            <th scope="col">Fecha</th>
+            <th scope="col">Comensales</th>
+            <th scope="col">Observaciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reserva in reservas %}
+            <tr>
+            <th scope="row">{{reserva.id}}</th>
+            <td>{{reserva.fecha | date('Y/m/d h:i') }}</td>
+            <td>{{reserva.comensales}}</td>
+            <td>{{reserva.observaciones}}</td>
+            </tr>   
+        {% endfor %} 
+
+        </tbody>
+        </table>
+    </div>
+  </div>
+
+</div>
+<!-- /.container -->
+{% endblock %}
