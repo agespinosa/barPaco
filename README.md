@@ -88,3 +88,6 @@
 
 54 - Reservas
   php bin/console doctrine:generate:entities AppBundle
+
+55 - Roles
+  https://symfony.com/doc/3.4/security.html
