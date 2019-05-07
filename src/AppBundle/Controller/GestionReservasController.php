@@ -12,12 +12,17 @@ use AppBundle\Form\ReservaType;
 class GestionReservasController extends Controller
 {
   /**
-   * @Route("/nueva", name="nuevaReserva")
+   * @Route("/nueva/{id}", name="nuevaReserva")
    */
-  public function nuevaReservaAction(Request $request)
+  public function nuevaReservaAction(Request $request, int $id=null)
   {
+      if($id){
+        $repository = $this->getDoctrine()->getRepository(Reserva::class);
+        $reserva = $repository->find($id);
+      }else{
 
-      $reserva = new Reserva();
+        $reserva = new Reserva();
+      }
       
       //Construyendo el formulario
       $form = $this->createForm(ReservaType::class,$reserva);

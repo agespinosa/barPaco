@@ -22,7 +22,7 @@
         <tbody>
         {% for reserva in reservas %}
             <tr>
-            <th scope="row">{{reserva.id}}</th>
+            <th scope="row"><a href="{{ path('nuevaReserva', {'id': reserva.id})}}">{{reserva.id}}</a></th>
             <td>{{reserva.fecha | date('Y/m/d h:i') }}</td>
             <td>{{reserva.comensales}}</td>
             <td>{{reserva.observaciones}}</td>
