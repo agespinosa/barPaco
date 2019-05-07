@@ -39,7 +39,7 @@ class GestionReservasController extends Controller
   public function reservasAction(Request $request)
   {
     $repository = $this->getDoctrine()->getRepository(Reserva::class);
-    $reservas = $repository->findAll();
+    $reservas = $repository->findByUsuario($this->getUser());
     return $this->render('gestion/reservas.html.twig',array("reservas"=>$reservas));
   }
   /**
@@ -51,7 +51,7 @@ class GestionReservasController extends Controller
     {
       //Busqueda de la reserva
       $repository = $this->getDoctrine()->getRepository(Reserva::class);
-      $reserva = $repository->find($id);
+      $reserva = $repository->findByUsuario($this->getUser());
       //Borrado
       $em= $this->getDoctrine()->getManager();
       $em->remove($reserva);
