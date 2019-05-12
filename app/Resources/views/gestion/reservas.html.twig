@@ -17,15 +17,18 @@
             <th scope="col">Fecha</th>
             <th scope="col">Comensales</th>
             <th scope="col">Observaciones</th>
+            <th scope="col">Acciones</th>
             </tr>
         </thead>
         <tbody>
         {% for reserva in reservas %}
             <tr>
-            <th scope="row"><a href="{{ path('nuevaReserva', {'id': reserva.id})}}"><i class="fas fa-edit"></i>{{reserva.id}}</a></th>
+             <th scope="row">{{reserva.id}}</th>
             <td>{{reserva.fecha | date('Y/m/d h:i') }}</td>
             <td>{{reserva.comensales}}</td>
             <td>{{reserva.observaciones}}</td>
+            <th><a href="{{ path('nuevaReserva', {'id': reserva.id})}}"><i class="fas fa-edit"></i></a> 
+              <a href="#" onclick= "return controlBorrado('{{ path('borrarReserva', {'id': reserva.id})}}', '{{reserva.id}}');"><i class="fas fa-trash"></i></a></th>
             </tr>   
         {% endfor %} 
 
@@ -35,5 +38,6 @@
   </div>
 
 </div>
+
 <!-- /.container -->
 {% endblock %}

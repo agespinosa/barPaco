@@ -38,6 +38,7 @@ class GestionReservasController extends Controller
       }
       return $this->render('gestionTapas/nuevaReserva.html.twig',array('form'=>$form->createView()));
   }
+
   /**
    * @Route("/reservas", name="reservas")
    */
@@ -56,7 +57,7 @@ class GestionReservasController extends Controller
     {
       //Busqueda de la reserva
       $repository = $this->getDoctrine()->getRepository(Reserva::class);
-      $reserva = $repository->findByUsuario($this->getUser());
+      $reserva = $repository->find($id);
       //Borrado
       $em= $this->getDoctrine()->getManager();
       $em->remove($reserva);

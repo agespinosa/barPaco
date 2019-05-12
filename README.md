@@ -98,3 +98,8 @@
 
 58 - Reservas. Validacion
   https://symfony.com/doc/current/validation.html
+
+59 - Eliminar reserva
+  https://sweetalert.js.org/guides/
+  https://developer.mozilla.org/en-US/docs/Web/API/Location/replace
+  
