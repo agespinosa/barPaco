@@ -23,6 +23,7 @@ class Reserva
      *
      * @ORM\Column(name="fecha", type="datetime")
      */
+    
     private $fecha;
     /**
      * @var string
